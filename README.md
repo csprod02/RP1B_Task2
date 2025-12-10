@@ -89,4 +89,5 @@ Takes the following arguments:
 This script takes a reference genome and two fastq files (illumina paired reads) and uses both bcftools and snippy for variant calling.  
 The resulting vcf files are then combined to create a combined vcf (**combined.[job].vcf**).  
 The number of variants detected by each variant caller is also output to a file called **[job]_vc_compare.txt**.  The precision and recall of this combined method is also calculated in respect to the mock vcf created during part 1 which contains the true variants.  This file is called **[job]_combined_prec_recall.txt**.  
+The folder created **isec_output_vc** contains files created when comparing the vcfs of bcftools and snippy.  The folder **isec_output_sim** contains the files used to calculate precision and recall of the combined method when comparing to the true set of variants (the mock vcf from part 1).  
 Additional details can be found within the code as comments.
