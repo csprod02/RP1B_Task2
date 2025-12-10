@@ -1,0 +1,4 @@
+
+variants unique to bcftools: 22609
+variants unique to snippy: 8557
+variants found by both: 47354
