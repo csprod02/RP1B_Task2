@@ -5,15 +5,32 @@ This project includes a Conda environment file to recreate the conda environment
 **NOTE:** All files are also located in a ready_to_run folder on CLIMB  
 https://jhub.climb.ac.uk/hub/user-redirect/lab/tree/shared-team/people/charlotte/task_2_ready_to_run  
 
+***From within the part 1 folder on CLIMB:***  
+~~~
+python compare_vcf.py -i EcoliK12-MG1655.fasta -c NC_000913.3 -j Ecoli  
+python compare_vcf.py -i NC_037282.1.fasta -c NC_037282.1 -j plasmodium
+~~~
+
+***From within the part 2 folder on CLIMB:***  
+~~~
+python combine_vcf.py -i EcoliK12-MG1655.fasta -r1 NC_000913.3_mutated_R1.fastq -r2 NC_000913.3_mutated_R2.fastq -c NC_000913.3 -j Ecoli_sim  
+python combine_vcf.py -i NC_037282.1.fasta -r1 NC_037282.1_mutated_R1.fastq -r2 NC_037282.1_mutated_R2.fastq -c NC_037282.1 -j plasmodium  
+python combine_vcf.py -i EcoliK12-MG1655.fasta -r1 SRR25083113_1.fastq.gz -r2 SRR25083113_2.fastq.gz -c NC_000913.3 -j Ecoli_real
+~~~
+
 ## Part 1
 The pipeline can be run using **compare_vcf.py** although both **mutate_genome.py** and **simulate_reads.py** have been written so that they can both be used independently.  
 
 This is an example command used to generate any results discussed here:  
-**python compare_vcf.py -i ref.fasta -c NC_004321.1 -j sp_name**  
+~~~
+python compare_vcf.py -i ref.fasta -c NC_004321.1 -j sp_name
+~~~
 
 Specific commands are listed below:  
+~~~
 python compare_vcf.py -i NC_037282.1.fasta -c NC_037282.1 -j plasmodium  
-python compare_vcf.py -i EcoliK12-MG1655.fasta -c NC_000913.3 -j Ecoli  
+python compare_vcf.py -i EcoliK12-MG1655.fasta -c NC_000913.3 -j Ecoli
+~~~
 
 All results are output into a directory:  
 **results_[job_name]**  
@@ -70,6 +87,22 @@ The precision and recall of the bcftools variant caller is calculated and record
 Additional details can be found within the code as comments.
 
 ## Part 2
+This is an example command used to generate any results discussed here:  
+~~~
+python combine_vcf.py -i ref.fasta -r1 NC_004321.1_R1.fastq -r2 NC_004321.1_R2.fastq -c NC_004321.1 -j sp_name
+~~~
+
+Specific commands are listed below:  
+~~~
+python combine_vcf.py -i EcoliK12-MG1655.fasta -r1 SRR25083113_1.fastq.gz -r2 SRR25083113_2.fastq.gz -c NC_000913.3 -j Ecoli_real
+python combine_vcf.py -i NC_037282.1.fasta -r1 NC_037282.1_mutated_R1.fastq -r2 NC_037282.1_mutated_R2.fastq -c NC_037282.1 -j plasmodium  
+python combine_vcf.py -i EcoliK12-MG1655.fasta -r1 SRR25083113_1.fastq.gz -r2 SRR25083113_2.fastq.gz -c NC_000913.3 -j Ecoli_real
+~~~
+
+All results are output into a directory:  
+**results_[job_name]** 
+
+
 This part of the project relies on some files output during the previous part:  
 + Two simulated reads fastq files for both the plasmodium and E-coli genomes
 + Two fastq files containing the real reads for E-coli
