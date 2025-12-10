@@ -2,6 +2,9 @@
 
 This project includes a Conda environment file to recreate the conda environment used. This can be found in the repository file **task2_env.ymal**  
 
+**NOTE:** All files are also located in a ready_to_run folder on CLIMB  
+https://jhub.climb.ac.uk/hub/user-redirect/lab/tree/shared-team/people/charlotte/task_2_ready_to_run  
+
 ## Part 1
 The pipeline can be run using **compare_vcf.py** although both **mutate_genome.py** and **simulate_reads.py** have been written so that they can both be used independently.  
 
