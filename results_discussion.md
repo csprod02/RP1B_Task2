@@ -4,7 +4,7 @@
 ***CLI Command:*** python compare_vcf.py -i EcoliK12-MG1655.fasta -c NC_000913.3 -j Ecoli  
 **Precision:** 1.0
 **Recall:** 0.978  
-The recall of bcftools alone was ~0.98 and there was a total of 7 false negatives (mutations missed by the variant caller).  When looking at the 0000.vcf file for these results, it appears that all of these missed variants were SNPs.  When using samtoolsl tview to view these locations, it seems that these missing SNPs appear to be only present in some of the reads, but not all mapped to that location.  Considering these are simulated reads, this doesn’t appear to make much sense, however I assume that due to repetitive sections within the genome, some reads could have matches in multiple places with minimal mismatch and so these variants have maybe been missed as a result.  
+The recall of bcftools alone was ~0.98 and there was a total of 7 false negatives (mutations missed by the variant caller).  When looking at the 0000.vcf file for these results, it appears that all of these missed variants were SNPs.  When using samtools tview to view these locations, it seems that these missing SNPs appear to be only present in some of the reads, but not all mapped to that location.  Considering these are simulated reads, this doesn’t appear to make much sense, however I assume that due to repetitive sections within the genome, some reads could have matches in multiple places with minimal mismatch and so these variants have maybe been missed as a result.  
 
 ### Part 2:
 #### Simulated Data
